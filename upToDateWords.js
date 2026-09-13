@@ -1,2 +1,2 @@
-window.en = "draft";
-window.fa = "دقیقا";
+window.en = "Times";
+window.fa = "چنانی";
