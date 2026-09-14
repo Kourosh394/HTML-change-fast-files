@@ -1,0 +1,47 @@
+@font-face {
+  font-family: B Homa;
+  src: url("B Homa.ttf");
+}
+
+body {
+  background-color: skyblue;
+  font-family: B Homa;
+  text-align: center;
+}
+
+button {
+  font-family: B Homa;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  border-radius: 20%;
+}
+
+img {
+  width: 100px;
+}
+
+input {
+  text-align: center;
+  font-family: B Homa;
+  width: 100px;
+  font-size: 20px;
+}
+
+#money {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+}
+
+#words {
+  position: fixed;
+  top: 40px;
+  right: 20px;
+}
+
+.return {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}

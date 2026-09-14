@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa" dir="auto">
+
+<head>
+    <meta charset="UTF-8">
+    <title>مدیر کلمات داخلی</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
+    <style>
+        @media (hover: none) and (pointer: coarse) {
+            #word {
+                display: block;
+                margin: 150px auto 0px;
+            }
+
+            button {
+                display: block;
+                margin: 30px auto;
+            }
+        }
+    </style>
+    <script src="shared js.js"></script>
+    <script>
+        if (localStorage.getItem("cache-g") == "chooseWord") {
+            localStorage.setItem("cache-g", localStorage.getItem(`W${Math.floor(Math.random() * words) + 1}-g`));
+            window.location.href = 'game.html';
+        } else if (localStorage.getItem("cache-g") == "WordMGR") {
+            localStorage.removeItem("cache-g");
+        }
+        else {
+            localStorage.removeItem("cache-g");
+            window.location.href = 'main.html';
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="word">
+    <button onclick="startGame()">شروع بازی و ثبت با این کلمه</button>
+    <button onclick="saveWord()">فقط ثبت کلمه</button>
+    <button onclick="deleteWord()">پاک کردن آخرین کلمه</button>
+    <button onclick="seeWord()">دیدن آخرین کلمه</button>
+    <p style="color: red;">توجه: لطفا ایموجی، "-"، اعراب و کلمه ی غیر از 5 حرف وارد نکنید. ایموجی و اعراب مجبور به پاک کردن آخرین کلمه خواهند شد.</p>
+    <button onclick="window.location.href = 'main.html'" class="return">برگشت</button>
+    <p id="money"></p>
+    <p id="words"></p>
+    <script>
+        MAW();
+        function startGame() {
+            let word = document.getElementById("word").value;
+            if (word.length == 5 && word[0] != "-" && word[1] != "-" && word[2] != "-" && word[3] != "-" && word[4] != "-") {
+                localStorage.setItem("cache-g", word);
+                let counter = 1;
+                while (words >= counter) {
+                    if (word == localStorage.getItem(`W${counter}-g`)) {
+                        alert("این کلمه قبلاً ذخیره شده اما در بازی همین کلمه میاید.");
+                        window.location.href = 'game.html';
+                        return;
+                    }
+                    counter++;
+                }
+                words++;
+                localStorage.setItem("words-g", words);
+                localStorage.setItem(`W${words}-g`, word);
+                window.location.href = 'game.html';
+            }
+            if (word.length != 5) {
+                alert("کلمه 5 حرفی نیست.");
+            }
+            if (word[0] == "-" || word[1] == "-" || word[2] == "-" || word[3] == "-" || word[4] == "-") {
+                alert("کلمه \"-\" دارد.");
+            }
+        }
+        function saveWord() {
+            let word = document.getElementById("word").value;
+            if (word.length == 5 && word[0] != "-" && word[1] != "-" && word[2] != "-" && word[3] != "-" && word[4] != "-") {
+                let counter = 1;
+                while (words >= counter) {
+                    if (word == localStorage.getItem(`W${counter}-g`)) {
+                        alert("این کلمه قبلاً ذخیره شده اما در بازی همین کلمه میاید.");
+                        MAW();
+                        return;
+                    }
+                    counter++;
+                }
+                words++;
+                localStorage.setItem("words-g", words);
+                localStorage.setItem(`W${words}-g`, word);
+                alert("ثبت شد.");
+                MAW();
+            }
+            if (word.length != 5) {
+                alert("کلمه 5 حرفی نیست.");
+            }
+            if (word[0] == "-" || word[1] == "-" || word[2] == "-" || word[3] == "-" || word[4] == "-") {
+                alert("کلمه \"-\" دارد.");
+            }
+        }
+        function deleteWord() {
+            if (words != 0) {
+                localStorage.removeItem(`W${words}-g`);
+                words--;
+                localStorage.setItem("words-g", words);
+                alert("پاک شد.");
+                MAW();
+            } else {
+                alert("کلمه ای برای پاک کردن نیست.");
+            }
+        }
+        function seeWord() {
+            if (words != 0) {
+                alert(`آخرین کلمه: ${localStorage.getItem(`W${words}-g`)}`);
+            } else {
+                alert("کلمه ای برای دیدن نیست.");
+            }
+        }
+    </script>
+</body>
+
+</html>

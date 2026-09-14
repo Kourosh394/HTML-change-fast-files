@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="auto">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
+    <title>انتخاب زبان کلمه</title>
+    <script>
+        if(localStorage.getItem("cache-g") != "getWordInGithub"){
+            window.location.href = 'main.html';
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="window.location.href = 'main.html'" class="return">برگشت</button>
+    <script src="https://kourosh394.github.io/HTMLCFF/upToDateWords.js"></script>
+    <script>
+        if (window.en.length != 5 || window.fa.length != 5 || window.fa[0] == "-" || window.fa[1] == "-" || window.fa[2] == "-" || window.fa[3] == "-" || window.fa[4] == "-" || window.en[0] == "-" || window.en[1] == "-" || window.en[2] == "-" || window.en[3] == "-" || window.en[4] == "-") {
+            alert("مشکلی در کلمات است. لطفاً به کوروش بگویید.");
+            window.location.href = 'main.html';
+        }
+    </script>
+    <h1>با کدام زبان؟</h1>
+    <button onclick="enl()">انگلیسی</button>
+    <button onclick="fal()">فارسی</button>
+    <script src="shared js.js"></script>
+    <script>
+        function enl() {
+            let counter = 1;
+            while (words >= counter) {
+                if (window.en == localStorage.getItem(`W${counter}-g`)) {
+                    alert("این کلمه قبلاً ذخیره شده و شما نمیتوانید بازی کنید.");
+                    return;
+                }
+                counter++;
+            }
+            localStorage.setItem("cache-g", `i-${window.en}`);
+            words++;
+            localStorage.setItem("words-g", words);
+            localStorage.setItem(`W${words}-g`, window.en);
+            window.location.href = 'game.html';
+        }
+        function fal() {
+            let counter = 1;
+            while (words >= counter) {
+                if (window.fa == localStorage.getItem(`W${counter}-g`)) {
+                    alert("این کلمه قبلاً ذخیره شده و شما نمیتوانید بازی کنید.");
+                    return;
+                }
+                counter++;
+            }
+            localStorage.setItem("cache-g", `i-${window.fa}`);
+            words++;
+            localStorage.setItem("words-g", words);
+            localStorage.setItem(`W${words}-g`, window.fa);
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+
+</html>
