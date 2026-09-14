@@ -10,6 +10,8 @@
     <script>
         if(localStorage.getItem("cache-g") != "getWordInGithub"){
             window.location.href = 'main.html';
+        } else {
+            localStorage.removeItem("cache-g");
         }
     </script>
 </head>
