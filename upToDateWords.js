@@ -1,2 +1,2 @@
-window.en = "could";
-window.fa = "نادان";
+window.en = "five5";
+window.fa = "لپتاپ";
