@@ -20,6 +20,7 @@
 
         .BG {
             width: 50px;
+            margin: 10px;
             user-select: none;
         }
 
@@ -81,12 +82,12 @@
     <button class="BG" onclick="NM()">↓</button>
     <button class="BG" onclick="NN()">↓</button>
     <br>
-    <button onclick="CS()">فاصله</button>
+    <button onclick="CS()" style="position: relative; top: 10px;">فاصله</button>
     <br>
-    <button onclick="window.location.href = 'main.html'">برگشت</button>
+    <button onclick="window.location.href = 'main.html'" style="position: relative; top: 30px;">برگشت</button>
     <p id="alert"></p>
     <button class="BG" id="help" onclick="help()"
-        style="position: fixed; bottom: 20px; right: 50%; transform: translateX(50%);">💡</button>
+        style="position: fixed; bottom: 20px; right: 50%; transform: translateX(50%); margin: 0px;">💡</button>
     <script src="shared js.js"></script>
     <script>
         MAW();
