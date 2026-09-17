@@ -25,9 +25,7 @@
         if (localStorage.getItem("cache-g") == "chooseWord") {
             localStorage.setItem("cache-g", localStorage.getItem(`W${Math.floor(Math.random() * words) + 1}-g`));
             window.location.href = 'game.html';
-        } else if (localStorage.getItem("cache-g") == "WordMGR") {
-            return;
-        } else {
+        } else if (localStorage.getItem("cache-g") == "WordMGR") { } else {
             window.location.href = 'main.html';
         }
     </script>
