@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <h1>آیا میخواهید بازی را ریست کنید؟ چون کار ریست پاک کردن اطلاعات بازی است اما خود بازی نه.</h1>
+    <h1 style="color: red;" id="H1">آیا میخواهید بازی را ریست کنید؟ چون کار ریست پاک کردن اطلاعات بازی است اما خود بازی نه.</h1>
     <br>
     <button onclick="reset()">بله</button>
-    <button onclick="window.location.href = 'main.html'">برگشت</button>
+    <button onclick="window.location.href = 'main.html'">خیر</button>
     <script src="shared js.js"></script>
     <script>
         function reset() {
@@ -30,7 +30,11 @@
             localStorage.removeItem("words-g");
             localStorage.removeItem("money-g");
             localStorage.removeItem("cache-g");
-            alert("انجام شد. اما برای دیدن ببندید و دوباره باز کنید.");
+            document.getElementById("H1").style.color = "black";
+            document.getElementById("H1").innerText = "انجام شد. لطفاً صبر کنید.";
+            setTimeout(function () {
+                window.location.href = 'main.html';
+            }, 1000);
         }
     </script>
 </body>

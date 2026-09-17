@@ -26,7 +26,7 @@
         #alert {
             color: red;
             position: fixed;
-            bottom: 50px;
+            bottom: 60px;
             right: 50%;
             transform: translateX(50%);
         }
@@ -37,7 +37,7 @@
             }
 
             #jone {
-                top: 120px;
+                top: 150px;
             }
 
             #alert {
@@ -118,6 +118,12 @@
                 localStorage.setItem("money-g", money);
                 localStorage.setItem("cache-g", word);
                 window.location.href = 'win.html';
+            } else if (jone == 0) {
+                document.getElementById("word").style.color = "red";
+                document.getElementById("word").innerText = `شما باختید. کلمه: ${word}`;
+                setTimeout(function () {
+                    window.location.href = 'main.html';
+                }, 1000);
             }
         }
         WALShow();
@@ -190,9 +196,6 @@
                 setTimeout(function () {
                     document.getElementById("jone").style.color = "black";
                 }, 1000);
-            } else {
-                alert(`شما باختید. کلمه: ${word}`);
-                window.location.href = 'main.html';
             }
         }
         function CFL() {
