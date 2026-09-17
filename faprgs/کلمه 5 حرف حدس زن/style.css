@@ -51,7 +51,7 @@ input {
 }
 
 .SH1 {
-  animation: MHP 0.5s 1;
+  animation: MOP 0.5s 1;
 }
 
 @keyframes MTP {
@@ -76,21 +76,21 @@ input {
   }
 }
 
-@keyframes MHP {
+@keyframes MOP {
   0% {
     transform: translateX(0);
   }
 
   25% {
-    transform: translateX(-0.5%);
+    transform: translateX(-1%);
   }
 
   50% {
-    transform: translateX(0.5%);
+    transform: translateX(1%);
   }
 
   75% {
-    transform: translateX(-0.5%);
+    transform: translateX(-1%);
   }
 
   100% {
