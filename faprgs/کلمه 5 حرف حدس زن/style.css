@@ -15,6 +15,7 @@ button {
   color: white;
   font-size: 20px;
   border-radius: 20%;
+  cursor: pointer;
 }
 
 img {
@@ -39,4 +40,82 @@ input {
   position: fixed;
   top: 40px;
   right: 20px;
+}
+
+.shake {
+  animation: MTP 0.5s 1;
+}
+
+.SFTTXS {
+  animation: MTPFTTXS 0.5s 1;
+}
+
+.SH1 {
+  animation: MHP 0.5s 1;
+}
+
+@keyframes MTP {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(10%);
+  }
+
+  75% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes MHP {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-0.5%);
+  }
+
+  50% {
+    transform: translateX(0.5%);
+  }
+
+  75% {
+    transform: translateX(-0.5%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes MTPFTTXS {
+  0% {
+    transform: translateX(50%);
+  }
+
+  25% {
+    transform: translateX(40%);
+  }
+
+  50% {
+    transform: translateX(60%);
+  }
+
+  75% {
+    transform: translateX(40%);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
 }
