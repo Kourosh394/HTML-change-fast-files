@@ -8,6 +8,7 @@ body {
   font-family: B Homa;
   font-size: 25px;
   text-align: center;
+  touch-action: manipulation;
 }
 
 button {

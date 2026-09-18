@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
     <style>
-        body {
-            touch-action: manipulation;
-        }
-
         #jone {
             position: fixed;
             top: 80px;
@@ -99,7 +95,7 @@
         let l5 = "-";
         let tWord = `${l1}${l2}${l3}${l4}${l5}`;
         let engLetter = "A";
-        let faLetters = ["آ", "ا", "ب", "پ", "ت", "ث", "ج", "چ", "ح", "خ", "د", "ذ", "ر", "ز", "ژ", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ک", "گ", "ل", "م", "ن", "و", "ه", "ی"];
+        let faLetters = ["آ", "ب", "پ", "ت", "ث", "ج", "چ", "ح", "خ", "د", "ذ", "ر", "ز", "ژ", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ک", "گ", "ل", "م", "ن", "و", "ه", "ی"];
         let faNumber = 0;
         let faLetter = faLetters[faNumber];
         let markLetters = ["،", "؛", "؟", "!", "٫", "٬", "ـ", "…", "«", "»", "(", ")", "[", "]", "{", "}", "—", "+", "=", ".", ";", ",", "'", "\"", "_", "*", "/", "\\", "|", "@", "#", "$", "%", "&", "^", "~", "`", "<", ">"];
@@ -137,7 +133,7 @@
         }
         function NLF() {
             faNumber++;
-            if (faNumber == 33) {
+            if (faNumber == 32) {
                 faNumber = 0;
             }
             faLetter = faLetters[faNumber];
@@ -153,7 +149,7 @@
         function LLF() {
             faNumber--;
             if (faNumber == -1) {
-                faNumber = 32;
+                faNumber = 31;
             }
             faLetter = faLetters[faNumber];
             WALShow();
@@ -220,6 +216,28 @@
             if (faLetter == word[4]) {
                 l5 = word[4];
                 CCJ = 0;
+            }
+            if (faLetter == "آ") {
+                if ("ا" == word[0]) {
+                    l1 = word[0];
+                    CCJ = 0;
+                }
+                if ("ا" == word[1]) {
+                    l2 = word[1];
+                    CCJ = 0;
+                }
+                if ("ا" == word[2]) {
+                    l3 = word[2];
+                    CCJ = 0;
+                }
+                if ("ا" == word[3]) {
+                    l4 = word[3];
+                    CCJ = 0;
+                }
+                if ("ا" == word[4]) {
+                    l5 = word[4];
+                    CCJ = 0;
+                }
             }
             if (CCJ == 1) {
                 joneCam();
