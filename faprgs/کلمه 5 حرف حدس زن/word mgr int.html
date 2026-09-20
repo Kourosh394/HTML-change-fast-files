@@ -8,24 +8,23 @@
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
+    <script src="https://kourosh394.github.io/HTMLCFF/upToDateWords.js"></script>
     <script>
-        if(localStorage.getItem("cache-g") != "getWordInGithub"){
+        if (localStorage.getItem("cache-g") != "getWordInGithub") {
+            window.location.href = 'main.html';
+        } else if (window.en.length != 5 || window.fa.length != 5 || window.fa[0] == "-" || window.fa[1] == "-" || window.fa[2] == "-" || window.fa[3] == "-" || window.fa[4] == "-" || window.en[0] == "-" || window.en[1] == "-" || window.en[2] == "-" || window.en[3] == "-" || window.en[4] == "-") {
+            alert("مشکلی در کلمات است. لطفاً به کوروش بگویید.");
             window.location.href = 'main.html';
         }
     </script>
 </head>
 
 <body>
-    <script src="https://kourosh394.github.io/HTMLCFF/upToDateWords.js"></script>
-    <script>
-        if (window.en.length != 5 || window.fa.length != 5 || window.fa[0] == "-" || window.fa[1] == "-" || window.fa[2] == "-" || window.fa[3] == "-" || window.fa[4] == "-" || window.en[0] == "-" || window.en[1] == "-" || window.en[2] == "-" || window.en[3] == "-" || window.en[4] == "-") {
-            alert("مشکلی در کلمات است. لطفاً به کوروش بگویید.");
-            window.location.href = 'main.html';
-        }
-    </script>
     <h1>با کدام زبان؟</h1>
-    <button onclick="enl()" id="enb" class="BM">انگلیسی</button>
-    <button onclick="fal()" id="fab" class="BM">فارسی</button>
+    <p id="money"></p>
+    <p id="words"></p>
+    <button onclick="enl()" id="enb">انگلیسی</button>
+    <button onclick="fal()" id="fab">فارسی</button>
     <p id="alert" style="color: red;"></p>
     <button onclick="window.location.href = 'main.html'">برگشت</button>
     <script src="shared js.js"></script>

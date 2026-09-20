@@ -47,11 +47,11 @@
     <script>
         let word = localStorage.getItem("cache-g");
         let MW = 2;
-        localStorage.removeItem("cache-g");
         if (word == null) {
             window.location.href = 'main.html';
         } else if (word.slice(0, 2) == "i-") {
             word = word.slice(2);
+            localStorage.setItem("cache-g", word);
             MW = 5;
         }
         if (word.length != 5) {

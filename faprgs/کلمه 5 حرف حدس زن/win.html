@@ -45,6 +45,7 @@
     </style>
     <script>
         let word = localStorage.getItem("cache-g");
+        localStorage.removeItem("cache-g");
         if (word == null || word.length != 5) {
             window.location.href = 'main.html';
         } else {
