@@ -21,3 +21,7 @@ input {
 #words {
   top: 60px;
 }
+
+.SBE {
+  animation: MTP 0.5s 1;
+}
