@@ -28,3 +28,12 @@ function SBE(id) {
     }, 500)
     document.getElementById(id).classList.remove("SBE");
 }
+function hideCodes(code) {
+    if (code == "زیزی گولو آزی پازی دراکوتا تا به تا") {
+        document.getElementById("hideCodeImg").src = "Hide codes images/Zizigulu.png";
+        document.getElementById("hideCodeImg").style.display = "block";
+    }
+    setTimeout(function () {
+        document.getElementById("hideCodeImg").style.display = "none";
+    }, 3000);
+}

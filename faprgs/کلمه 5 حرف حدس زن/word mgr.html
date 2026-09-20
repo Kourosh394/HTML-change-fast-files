@@ -29,15 +29,16 @@
 
 <body>
     <input type="text" id="word" lang="auto" dir="auto">
+    <p id="money"></p>
+    <p id="words"></p>
     <p id="alert"></p>
     <button onclick="startGame()" class="BM">شروع بازی و ثبت با این کلمه</button>
     <button onclick="saveWord()" class="BM">فقط ثبت کلمه</button>
     <button onclick="deleteWord()" class="BM">پاک کردن آخرین کلمه</button>
     <button onclick="seeWord()" class="BM">دیدن آخرین کلمه</button>
     <button onclick="window.location.href = 'main.html'">برگشت</button>
+    <img id="hideCodeImg">
     <p style="color: red;">توجه: لطفا ایموجی، "-"، اعراب و کلمه ی غیر از 5 حرف وارد نکنید. ایموجی و اعراب مجبور به پاک کردن آخرین کلمه خواهند شد.</p>
-    <p id="money"></p>
-    <p id="words"></p>
     <script>
         MAW();
         let word;
@@ -56,6 +57,7 @@
                 document.getElementById("alert").style.color = "red";
                 document.getElementById("alert").innerText = "کلمه 5 حرفی نیست.";
                 shake("word");
+                hideCodes(word);
             }
             if (word[0] == "-" || word[1] == "-" || word[2] == "-" || word[3] == "-" || word[4] == "-") {
                 document.getElementById("alert").style.color = "red";

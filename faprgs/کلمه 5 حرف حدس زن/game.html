@@ -117,7 +117,7 @@
                 MAW();
                 localStorage.setItem("cache-g", word);
                 window.location.href = 'win.html';
-            } else if (jone == 0) {
+            } else if (jone == -1) {
                 document.getElementById("word").style.color = "red";
                 document.getElementById("word").innerText = `شما باختید. کلمه: ${word}`;
                 setTimeout(function () {
