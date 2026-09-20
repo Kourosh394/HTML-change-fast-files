@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
     <script src="shared js.js"></script>
     <script>
-        if (localStorage.getItem("money-g") == null || localStorage.getItem("words-g") == null) {
+        if (localStorage.getItem("money-g") == null || localStorage.getItem("words-g") == null || localStorage.getItem("startHour-g") == null || localStorage.getItem("day-g") == null) {
             localStorage.setItem("cache-g", "welcome");
             window.location.href = 'welcome.html';
         } else {
