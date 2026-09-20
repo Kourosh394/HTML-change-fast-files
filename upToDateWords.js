@@ -1,2 +1,2 @@
-window.en = "files";
-window.fa = "سمیرا";
+window.en = "worry";
+window.fa = "دقیقا";
