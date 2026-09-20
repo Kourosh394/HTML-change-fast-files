@@ -43,10 +43,10 @@
         if (dayILS != day && hour == startHour) {
             document.getElementById("BMD").innerText = "پول روزانه همین الان.";
             getMoneyDay = true;
-        } else if (hour < startHour) {
-            document.getElementById("BMD").innerText = `پول روزانه ${startHour - hour} ساعت دیگر`;
         } else if (hour > startHour) {
-            document.getElementById("BMD").innerText = `پول روزانه ${hour - startHour} ساعت دیگر`;
+            document.getElementById("BMD").innerText = `پول روزانه ${(startHour - hour) + 24} ساعت دیگر`;
+        } else if (hour < startHour) {
+            document.getElementById("BMD").innerText = `پول روزانه ${(hour - startHour) + 24} ساعت دیگر`;
         } else {
             document.getElementById("BMD").innerText = "پول روزانه 24 ساعت دیگر";
         }
