@@ -51,7 +51,6 @@
             window.location.href = 'main.html';
         } else if (word.slice(0, 2) == "i-") {
             word = word.slice(2);
-            localStorage.setItem("cache-g", word);
             MW = 5;
         }
         if (word.length != 5) {
@@ -89,13 +88,13 @@
     <script src="shared js.js"></script>
     <script>
         MAW();
-        let jone = 15;
+        let jone = 5;
         let l1 = "-";
         let l2 = "-";
         let l3 = "-";
         let l4 = "-";
         let l5 = "-";
-        let tWord = `${l1}${l2}${l3}${l4}${l5}`;
+        let thinkWord;
         let engLetter = "A";
         let faLetters = ["آ", "ب", "پ", "ت", "ث", "ج", "چ", "ح", "خ", "د", "ذ", "ر", "ز", "ژ", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ک", "گ", "ل", "م", "ن", "و", "ه", "ی"];
         let faNumber = 0;
@@ -104,20 +103,19 @@
         let markNumber = 0;
         let markLetter = markLetters[markNumber];
         let number = 0;
-        function moneySave(params) {
-            
-        }
+        localStorage.removeItem("cache-g");
         function WALShow() {
-            tWord = `${l1}${l2}${l3}${l4}${l5}`;
-            document.getElementById("word").innerText = tWord;
+            thinkWord = `${l1}${l2}${l3}${l4}${l5}`;
+            document.getElementById("word").innerText = thinkWord;
             document.getElementById("engLetter").innerText = engLetter;
             document.getElementById("faLetter").innerText = faLetter;
             document.getElementById("markLetter").innerText = markLetter;
             document.getElementById("number").innerText = number;
-            document.getElementById("jone").innerText = `جان ها: ${jone}/20`;
-            if (tWord == word) {
+            document.getElementById("jone").innerText = `جان ها: ${jone}/5`;
+            if (thinkWord == word) {
                 money = money + MW;
                 MAW();
+                localStorage.setItem("cache-g", word);
                 window.location.href = 'win.html';
             } else if (jone == 0) {
                 document.getElementById("word").style.color = "red";
