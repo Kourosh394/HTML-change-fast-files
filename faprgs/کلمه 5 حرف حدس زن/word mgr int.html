@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>انتخاب زبان کلمه</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
-    <title>انتخاب زبان کلمه</title>
     <script>
         if(localStorage.getItem("cache-g") != "getWordInGithub"){
             window.location.href = 'main.html';
@@ -41,7 +42,7 @@
             }
             localStorage.setItem("cache-g", `i-${window.en}`);
             words++;
-            localStorage.setItem("words-g", words);
+            MAW();
             localStorage.setItem(`W${words}-g`, window.en);
             window.location.href = 'game.html';
         }
@@ -57,7 +58,7 @@
             }
             localStorage.setItem("cache-g", `i-${window.fa}`);
             words++;
-            localStorage.setItem("words-g", words);
+            MAW();
             localStorage.setItem(`W${words}-g`, window.fa);
             window.location.href = 'game.html';
         }

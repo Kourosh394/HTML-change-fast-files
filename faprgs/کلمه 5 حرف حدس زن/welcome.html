@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <title>خوش آمدید!</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
-    <title>خوش آمدید!</title>
     <script>
         if (localStorage.getItem("cache-g") != "welcome") {
             window.location.href = 'main.html';
@@ -24,8 +25,18 @@
     <br><br>
     <script>
         function main() {
-            localStorage.setItem("money-g", 0);
-            localStorage.setItem("words-g", 0);
+            if (localStorage.getItem("money-g") == null) {
+                localStorage.setItem("money-g", 2);
+            }
+            if (localStorage.getItem("words-g") == null) {
+                localStorage.setItem("words-g", 0);
+            }
+            if (localStorage.getItem("startHour-g") == null) {
+                localStorage.setItem("startHour-g", new Date().getHours());
+            }
+            if (localStorage.getItem("day-g") == null) {
+                localStorage.setItem("day-g", new Date().getDay());
+            }
             window.location.href = 'main.html';
         }
     </script>

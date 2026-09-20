@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
     <title>مدیر کلمات داخلی</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
@@ -43,6 +44,7 @@
         function butSaved(GTG) {
             document.getElementById("alert").style.color = "black";
             document.getElementById("alert").innerText = "این کلمه قبلاً ذخیره شده اما در بازی همین کلمه میاید.";
+            SBE("alert");
             if (GTG == 1) {
                 setTimeout(function () {
                     window.location.href = 'game.html';
@@ -74,7 +76,7 @@
                     counter++;
                 }
                 words++;
-                localStorage.setItem("words-g", words);
+                MAW();
                 localStorage.setItem(`W${words}-g`, word);
                 window.location.href = 'game.html';
             }
@@ -93,10 +95,11 @@
                     counter++;
                 }
                 words++;
-                localStorage.setItem("words-g", words);
+                MAW();
                 localStorage.setItem(`W${words}-g`, word);
                 document.getElementById("alert").style.color = "black";
                 document.getElementById("alert").innerText = "ثبت شد.";
+                SBE("alert");
                 MAW();
             }
             checkWord();
@@ -108,6 +111,7 @@
                 localStorage.setItem("words-g", words);
                 document.getElementById("alert").style.color = "black";
                 document.getElementById("alert").innerText = "پاک شد.";
+                SBE("alert");
                 MAW();
             } else {
                 document.getElementById("alert").style.color = "red";
@@ -118,6 +122,7 @@
             if (words != 0) {
                 document.getElementById("alert").style.color = "black";
                 document.getElementById("alert").innerText = `آخرین کلمه: ${localStorage.getItem(`W${words}-g`)}`;
+                SBE("alert");
             } else {
                 document.getElementById("alert").style.color = "red";
                 document.getElementById("alert").innerText = "کلمه ای برای دیدن نیست.";

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
     <title>بازی</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
@@ -16,11 +17,11 @@
 
         .BG {
             width: 50px;
-            margin: 10px;
             user-select: none;
         }
 
         #alert {
+            display: none;
             color: red;
             position: fixed;
             bottom: 60px;
@@ -31,6 +32,7 @@
         @media (hover: none) and (pointer: coarse) {
             .BG {
                 width: 100px;
+                margin: 10px;
             }
 
             #jone {
@@ -59,10 +61,10 @@
 </head>
 
 <body>
+    <h1 id="word" lang="auto" dir="auto"></h1>
     <p id="money"></p>
     <p id="words"></p>
     <p id="jone"></p>
-    <h1 id="word"></h1>
     <button class="BG" onclick="LLE()">↑</button>
     <button class="BG" onclick="LLF()">↑</button>
     <button class="BG" onclick="LM()">↑</button>
@@ -81,7 +83,7 @@
     <button onclick="CS()" style="position: relative; top: 10px;">فاصله</button>
     <br>
     <button onclick="window.location.href = 'main.html'" style="position: relative; top: 30px;">برگشت</button>
-    <p id="alert"></p>
+    <p id="alert">شما پول ندارید.</p>
     <button class="BG" id="help" onclick="help()"
         style="position: fixed; bottom: 20px; right: 50%; transform: translateX(50%); margin: 0px;">💡</button>
     <script src="shared js.js"></script>
@@ -102,6 +104,9 @@
         let markNumber = 0;
         let markLetter = markLetters[markNumber];
         let number = 0;
+        function moneySave(params) {
+            
+        }
         function WALShow() {
             tWord = `${l1}${l2}${l3}${l4}${l5}`;
             document.getElementById("word").innerText = tWord;
@@ -112,8 +117,7 @@
             document.getElementById("jone").innerText = `جان ها: ${jone}/20`;
             if (tWord == word) {
                 money = money + MW;
-                localStorage.setItem("money-g", money);
-                localStorage.setItem("cache-g", word);
+                MAW();
                 window.location.href = 'win.html';
             } else if (jone == 0) {
                 document.getElementById("word").style.color = "red";
@@ -188,7 +192,7 @@
             jone--;
             if (jone != 0) {
                 document.getElementById("jone").style.color = "red";
-                SH1("word");
+                SBE("word");
                 shake("jone");
                 setTimeout(function () {
                     document.getElementById("jone").style.color = "black";
@@ -390,7 +394,7 @@
                 MAW();
                 WALShow();
             } else {
-                document.getElementById("alert").innerText = "شما پول ندارید.";
+                document.getElementById("alert").style.display = "block";
                 SFTTXS("help");
             }
         }

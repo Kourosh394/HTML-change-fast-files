@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
     <title>ریست</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
@@ -28,6 +29,8 @@
             }
             localStorage.removeItem("words-g");
             localStorage.removeItem("money-g");
+            localStorage.removeItem("startHour-g");
+            localStorage.removeItem("day-g");
             localStorage.removeItem("cache-g");
             document.getElementById("H1").style.color = "black";
             document.getElementById("H1").innerText = "انجام شد. لطفاً صبر کنید.";

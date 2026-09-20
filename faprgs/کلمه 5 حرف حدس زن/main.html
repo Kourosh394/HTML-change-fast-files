@@ -7,7 +7,6 @@
     <meta name="description"
         content="بازی کلمه 5 حرف حدس زن؛ کلمه‌های 5 حرفی را حدس بزنید و قبل از بازی کلمه ذخیره کنید.">
     <meta name="msvalidate.01" content="B760332CD52E9B592E375D808E6BBC21" />
-    <meta name="google-site-verification" content="aUGU5MFshdkGW5KhDbHPAMxVBh30SF_CgnoJyJwG3vE" />
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css" media="(hover: none) and (pointer: coarse)">
@@ -32,9 +31,25 @@
     <button onclick="WordMGR()" class="BM">مدیر کلمات داخلی</button>
     <button onclick="savedWord()" id="BS" class="BM">بازی با کلمه ی ذخیره شده</button>
     <button onclick="WordInInternet()" id="BI" class="BM">بازی با کلمه ی به روز</button>
+    <button onclick="giveMoneyDay()" id="BMD" class="BM">پول روزانه</button>
     <button onclick="reset()" class="BM">ریست</button>
     <script>
         MAW();
+        let startHour = localStorage.getItem("startHour-g");
+        let dayILS = localStorage.getItem("day-g");
+        let hour = new Date().getHours();
+        let day = new Date().getDay();
+        let getMoneyDay;
+        if (dayILS != day && hour == startHour) {
+            document.getElementById("BMD").innerText = "پول روزانه همین الان.";
+            getMoneyDay = true;
+        } else if (hour < startHour) {
+            document.getElementById("BMD").innerText = `پول روزانه ${startHour - hour} ساعت دیگر`;
+        } else if (hour > startHour) {
+            document.getElementById("BMD").innerText = `پول روزانه ${hour - startHour} ساعت دیگر`;
+        } else {
+            document.getElementById("BMD").innerText = "پول روزانه 24 ساعت دیگر";
+        }
         function WordMGR() {
             localStorage.setItem("cache-g", "WordMGR");
             window.location.href = 'word mgr.html';
@@ -55,6 +70,16 @@
             } else {
                 shake("BI");
                 document.getElementById("alert").innerText = "شما اینترنت ندارید.";
+            }
+        }
+        function giveMoneyDay() {
+            if (getMoneyDay) {
+                localStorage.setItem("cache-g", "giveMoneyDay");
+                localStorage.setItem("day-g", day);
+                window.location.href = 'giv mny day.html';
+            } else {
+                shake("BMD");
+                document.getElementById("alert").innerText = "شما نمیتوانید پول روزانه  بگیرید.";
             }
         }
         function reset() {

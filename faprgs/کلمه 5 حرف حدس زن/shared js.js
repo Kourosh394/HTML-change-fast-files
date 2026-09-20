@@ -2,7 +2,9 @@ let money = Number(localStorage.getItem("money-g"));
 let words = Number(localStorage.getItem("words-g"));
 function MAW() {
     document.getElementById("money").innerText = `💵: ${money}`;
+    localStorage.setItem("money-g", money);
     document.getElementById("words").innerText = `کلمات: ${words}`;
+    localStorage.setItem("words-g", words);
 }
 function shake(id) {
     setTimeout(function () {
@@ -16,9 +18,9 @@ function SFTTXS(id) {
     }, 500)
     document.getElementById(id).classList.remove("SFTTXS");
 }
-function SH1(id) {
+function SBE(id) {
     setTimeout(function () {
-        document.getElementById(id).classList.add("SH1");
+        document.getElementById(id).classList.add("SBE");
     }, 500)
-    document.getElementById(id).classList.remove("SH1");
+    document.getElementById(id).classList.remove("SBE");
 }
