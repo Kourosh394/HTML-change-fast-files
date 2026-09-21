@@ -43,16 +43,6 @@ input {
   right: 20px;
 }
 
-#hideCodeImg {
-  display: none;
-  position: fixed;
-  right: 1%;
-  bottom: 1%;
-  animation: RHCI 1s infinite;
-  width: 500px;
-  height: 500px;
-}
-
 .BM {
   display: block;
   margin: 30px auto;
@@ -133,19 +123,5 @@ input {
 
   100% {
     transform: translateX(50%);
-  }
-}
-
-@keyframes RHCI {
-  0% {
-    transform: translate(25%, 25%) rotate(-15deg);
-  }
-
-  50% {
-    transform: translate(25%, 25%) rotate(15deg);
-  }
-
-  100% {
-    transform: translate(25%, 25%) rotate(-15deg);
   }
 }

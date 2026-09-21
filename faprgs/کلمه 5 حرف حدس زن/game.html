@@ -88,7 +88,7 @@
     <script src="shared js.js"></script>
     <script>
         MAW();
-        let jone = 3;
+        let jone = 4;
         let l1 = "-";
         let l2 = "-";
         let l3 = "-";
@@ -117,7 +117,7 @@
                 MAW();
                 localStorage.setItem("cache-g", word);
                 window.location.href = 'win.html';
-            } else if (jone == -1) {
+            } else if (jone == 0) {
                 document.getElementById("word").style.color = "red";
                 document.getElementById("word").innerText = `شما باختید. کلمه: ${word}`;
                 setTimeout(function () {
