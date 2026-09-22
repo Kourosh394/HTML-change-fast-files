@@ -34,8 +34,8 @@
     <p id="alert"></p>
     <button onclick="startGame()" class="BM">شروع بازی و ثبت با این کلمه</button>
     <button onclick="saveWord()" class="BM">فقط ثبت کلمه</button>
-    <button onclick="deleteWord()" class="BM">پاک کردن آخرین کلمه</button>
-    <button onclick="seeWord()" class="BM">دیدن آخرین کلمه</button>
+    <button onclick="deleteWord()" class="BM" id="BDLW">پاک کردن آخرین کلمه</button>
+    <button onclick="seeWord()" class="BM" id="BSLW">دیدن آخرین کلمه</button>
     <button onclick="window.location.href = 'main.html'">برگشت</button>
     <p style="color: red;">توجه: لطفا ایموجی، "-"، اعراب و کلمه ی غیر از 5 حرف وارد نکنید. ایموجی و اعراب مجبور به پاک کردن آخرین کلمه خواهند شد.</p>
     <script>
@@ -65,7 +65,7 @@
         }
         function startGame() {
             word = document.getElementById("word").value;
-            if (word.length == 5 && word[0] != "-" && word[1] != "-" && word[2] != "-" && word[3] != "-" && word[4] != "-") {
+            if (word.length == 5 && word.includes("-") == false) {
                 localStorage.setItem("cache-g", word);
                 let counter = 1;
                 while (words >= counter) {
@@ -84,7 +84,7 @@
         }
         function saveWord() {
             word = document.getElementById("word").value;
-            if (word.length == 5 && word[0] != "-" && word[1] != "-" && word[2] != "-" && word[3] != "-" && word[4] != "-") {
+            if (word.length == 5 && word.includes("-") == false) {
                 let counter = 1;
                 while (words >= counter) {
                     if (word == localStorage.getItem(`W${counter}-g`)) {
@@ -114,6 +114,7 @@
                 SBE("alert");
                 MAW();
             } else {
+                shake("BDLW");
                 document.getElementById("alert").style.color = "red";
                 document.getElementById("alert").innerText = "کلمه ای برای پاک کردن نیست.";
             }
@@ -124,6 +125,7 @@
                 document.getElementById("alert").innerText = `آخرین کلمه: ${localStorage.getItem(`W${words}-g`)}`;
                 SBE("alert");
             } else {
+                shake("BSLW");
                 document.getElementById("alert").style.color = "red";
                 document.getElementById("alert").innerText = "کلمه ای برای دیدن نیست.";
             }

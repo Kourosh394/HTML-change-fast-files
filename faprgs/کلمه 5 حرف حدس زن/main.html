@@ -65,13 +65,8 @@
             }
         }
         function WordInInternet() {
-            if (navigator.onLine) {
-                localStorage.setItem("cache-g", "getWordInGithub");
-                window.location.href = 'word mgr int.html';
-            } else {
-                shake("BI");
-                document.getElementById("alert").innerText = "شما اینترنت ندارید.";
-            }
+            localStorage.setItem("cache-g", "getWordInGithub");
+            window.location.href = 'word mgr int.html';
         }
         function giveMoneyDay() {
             if (getMoneyDay) {
@@ -82,10 +77,6 @@
                 shake("BMD");
                 document.getElementById("alert").innerText = "شما نمیتوانید پول روزانه  بگیرید.";
             }
-        }
-        function downloadLocal() {
-            alert("هشدار: قانون کپی رایت را نقض نکنید.");
-            window.location.href = 'local version.zip';
         }
         function reset() {
             localStorage.setItem("cache-g", "reset");

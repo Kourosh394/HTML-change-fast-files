@@ -12,7 +12,7 @@
     <script>
         if (localStorage.getItem("cache-g") != "getWordInGithub") {
             window.location.href = 'main.html';
-        } else if (window.en.length != 5 || window.fa.length != 5 || window.fa[0] == "-" || window.fa[1] == "-" || window.fa[2] == "-" || window.fa[3] == "-" || window.fa[4] == "-" || window.en[0] == "-" || window.en[1] == "-" || window.en[2] == "-" || window.en[3] == "-" || window.en[4] == "-") {
+        } else if (window.en.length != 5 || window.fa.length != 5 || window.fa.includes("-") || window.en.includes("-")) {
             alert("مشکلی در کلمات است. لطفاً به کوروش بگویید.");
             window.location.href = 'main.html';
         }
