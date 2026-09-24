@@ -1,2 +1,2 @@
-window.en = "MSDOS";
-window.fa = "وگرنه";
+window.en = "early";
+window.fa = "ناخدا";
