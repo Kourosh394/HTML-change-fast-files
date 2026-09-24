@@ -1,2 +1,2 @@
-window.en = "Mochi";
-window.fa = "نقلیه";
+window.en = "MSDOS";
+window.fa = "وگرنه";
