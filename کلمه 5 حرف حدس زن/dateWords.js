@@ -1,2 +1,2 @@
-window.en = "early";
-window.fa = "ناخدا";
+window.en = "while";
+window.fa = "سوروش";
