@@ -1,2 +1,2 @@
-window.en = "while";
-window.fa = "سوروش";
+window.en = "async";
+window.fa = "سرمایه";
