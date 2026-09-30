@@ -1,2 +1,2 @@
 window.en = "async";
-window.fa = "سرمایه";
+window.fa = "ثانیه";
