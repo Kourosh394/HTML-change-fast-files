@@ -1,2 +1,2 @@
-window.en = "async";
-window.fa = "ثانیه";
+window.en = "count";
+window.fa = "دیوار";
