@@ -1,2 +1,2 @@
-window.en = "count";
-window.fa = "دیوار";
+window.en = "Start";
+window.fa = "بهانه";
