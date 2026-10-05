@@ -1,2 +1,2 @@
-window.en = "Start";
-window.fa = "بهانه";
+window.en = "ended";
+window.fa = "سلامت";
