@@ -1,1 +1,1 @@
-window.versionDay = 1.5;
+window.versionDay = 1.6;
